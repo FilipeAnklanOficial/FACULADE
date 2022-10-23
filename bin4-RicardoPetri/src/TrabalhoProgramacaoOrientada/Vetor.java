@@ -1,39 +1,67 @@
 package TrabalhoProgramacaoOrientada;
 
+import java.util.Scanner;
+
 public class Vetor {
 
-    private int tamanho;
-    private int inserir;
-    private int remover;
-    private int buscar;
+    private int tamanho = 6;
+    private int posicao = 0;
     private int [] vetor;
 
-    public Vetor(int tamanho) {
-        this.tamanho = tamanho;
-        this.vetor = new int [tamanho];
+    public Vetor() {
+        this.vetor = new int [this.tamanho];
     }
 
-    public int getInserir() {
-        return inserir;
+    public void Inserir(){
+        Scanner sc = new Scanner(System.in);
+        int valor;
+        System.out.println("Qual valor deseja inserir?");
+        valor = sc.nextInt();
+        if (this.posicao > 5){
+            System.out.println(" ");
+            System.out.println("Não há espaço no vetor");
+            System.out.println(" ");
+        }else {
+            if (valor > 0) {
+                vetor[this.posicao] = valor;
+                System.out.println("Valor inserido");
+                this.posicao++;
+            } else {
+                System.out.println("Valor incorreto");
+            }
+        }
     }
 
-    public void setInserir(int inserir) {
-        this.inserir = inserir;
+    public void Remover(){
+        Scanner sc = new Scanner(System.in);
+        int posicao;
+        System.out.println("Qual a posição que deseja remover?");
+        posicao = sc.nextInt();
+            if(posicao > 0 || posicao < 5){
+                vetor[posicao] = 0;
+                for (int i = posicao; i < this.posicao; i++){
+                    int aux = vetor[i + 1];
+                    vetor[i] = aux;
+                }
+                this.posicao --;
+            }else {
+                System.out.println("Valor incorreto, digite um valor inteiro entre 0 e 5");
+            }
     }
 
-    public int getRemover() {
-        return remover;
+    public void Buscar(){
+        Scanner sc = new Scanner(System.in);
+        int posicao;
+        System.out.println("Qual posicao deseja Buscar?");
+        posicao = sc.nextInt();
+        System.out.println(" ");
+        System.out.println(vetor[posicao]);
+        System.out.println(" ");
     }
 
-    public void setRemover(int remover) {
-        this.remover = remover;
-    }
-
-    public int getBuscar() {
-        return buscar;
-    }
-
-    public void setBuscar(int buscar) {
-        this.buscar = buscar;
+    public void ImprimeVetor(){
+        for (int i = 0; i < this.tamanho; i++) {
+            System.out.println("O valor da posição: " + i + " é: " + vetor[i]);
+        }
     }
 }
