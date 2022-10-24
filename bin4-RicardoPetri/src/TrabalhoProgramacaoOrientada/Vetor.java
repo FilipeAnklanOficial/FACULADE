@@ -14,10 +14,11 @@ public class Vetor {
 
     public void Inserir(){
         Scanner sc = new Scanner(System.in);
-        int valor;
+        int valor, tamanhoVetor;
+        tamanhoVetor = this.posicao;
         System.out.println("Qual valor deseja inserir?");
         valor = sc.nextInt();
-        if (this.posicao > 5){
+        if (tamanhoVetor > 5){
             System.out.println(" ");
             System.out.println("Não há espaço no vetor");
             System.out.println(" ");
@@ -27,7 +28,7 @@ public class Vetor {
                 System.out.println("Valor inserido");
                 this.posicao++;
             } else {
-                System.out.println("Valor incorreto");
+                System.out.println("Valor incorreto, digite somente valores inteiros");
             }
         }
     }
@@ -37,15 +38,15 @@ public class Vetor {
         int posicao;
         System.out.println("Qual a posição que deseja remover?");
         posicao = sc.nextInt();
-            if(posicao > 0 || posicao < 5){
+            if(posicao < 0 || posicao > 5){
+                System.out.println("Valor incorreto, digite um valor inteiro entre 0 e 5");
+            }else {
                 vetor[posicao] = 0;
                 for (int i = posicao; i < this.posicao; i++){
                     int aux = vetor[i + 1];
                     vetor[i] = aux;
                 }
                 this.posicao --;
-            }else {
-                System.out.println("Valor incorreto, digite um valor inteiro entre 0 e 5");
             }
     }
 
@@ -54,9 +55,13 @@ public class Vetor {
         int posicao;
         System.out.println("Qual posicao deseja Buscar?");
         posicao = sc.nextInt();
-        System.out.println(" ");
-        System.out.println(vetor[posicao]);
-        System.out.println(" ");
+            if(posicao < 0 || posicao > 5){
+                System.out.println("Valor incorreto, digite um valor inteiro entre 0 e 5");
+            }else {
+                System.out.println(" ");
+                System.out.println(vetor[posicao]);
+                System.out.println(" ");
+            }
     }
 
     public void ImprimeVetor(){
