@@ -5,15 +5,14 @@ public class Funcionario {
     private int cpf;
     private double salario;
 
-
-    public Funcionario(){
-
-    }
-
     public Funcionario(String nome, int cpf, double salario) {
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
+    }
+
+    public Funcionario() {
+
     }
 
     public String getNome() {
