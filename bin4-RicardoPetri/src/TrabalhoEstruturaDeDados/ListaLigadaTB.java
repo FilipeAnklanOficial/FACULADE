@@ -11,21 +11,21 @@ public class ListaLigadaTB <T> {
         tamanho = 0;
     }
 
-    public int getTamanho() {
-        return tamanho;
-    }
-
     public void adicionaInicio(T conteudo) {
-        NoTB<T> novoNo = new NoTB<>(conteudo, null);
-        primeiro = novoNo;
+        NoTB<T> novoNo = new NoTB<>(conteudo, null, null);
+        if (tamanho != 0){
+            primeiro.setAnterior(novoNo);
+            novoNo.setProximo(primeiro);
+            primeiro = novoNo;
+        }else{
+            primeiro = novoNo;
+        }
         tamanho++;
     }
 
     public void adicionaFinal(T conteudo) {
-        NoTB<T> novoNo = new NoTB<>(conteudo, null);
-        if (tamanho == 0) {
-            primeiro = novoNo;
-        } else {
+        NoTB<T> novoNo = new NoTB<>(conteudo, null, null);
+        if (tamanho != 0) {
             NoTB<T> atual = primeiro;
             while (atual.getProximo() != null) {
                 atual = atual.getProximo();
@@ -33,38 +33,41 @@ public class ListaLigadaTB <T> {
             novoNo.setAnterior(atual);
             atual.setProximo(novoNo);
             ultimo = novoNo;
+        } else {
+            primeiro = novoNo;
         }
         tamanho++;
     }
 
-    public void mostraNos() {
+    public void mostrarNos() {
         if (tamanho != 0) {
             NoTB<T> atual = primeiro;
             int contador = 0;
-            //atual = atual.getProximo();
+            System.out.println("Mostrando Nos em ordem crescente");
             while (atual.getProximo() != null) {
-                System.out.println("O conteúdo do nó na posição " + contador + " é igual a: " + atual.getConteudo());
+                System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
                 atual = atual.getProximo();
                 contador++;
             }
-            System.out.println("O conteúdo do nó na posição " + contador + " é igual a: " + atual.getConteudo());
+            System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
         } else {
-            System.out.println("Não existe nenhum elemento na lista.");
+            System.out.println("Nao existe nenhum elemento na lista.");
         }
     }
 
-    public void mostraNosDec() {
+    public void mostrarNosDecrescente() {
         if (tamanho != 0) {
             NoTB<T> atual = ultimo;
             int contador = 0;
+            System.out.println("Mostrando Nos em ordem decrescente");
             while (atual.getAnterior() != null) {
-                System.out.println("O conteúdo do nó na posição " + contador + " é igual a: " + atual.getConteudo());
+                System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
                 atual = atual.getAnterior();
                 contador++;
             }
-            System.out.println("O conteúdo do nó na posição " + contador + " é igual a: " + atual.getConteudo());
+            System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
         } else {
-            System.out.println("Não existe nenhum elemento na lista.");
+            System.out.println("Nao existe nenhum elemento na lista.");
         }
     }
 

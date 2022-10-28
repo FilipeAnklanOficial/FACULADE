@@ -6,9 +6,10 @@ public class NoTB<T>{
     private NoTB<T> anterior;
 
 
-    public NoTB(T conteudo, NoTB<T> proximo) {
+    public NoTB(T conteudo, NoTB<T> proximo, NoTB<T>anterior) {
         this.conteudo = conteudo;
         this.proximo = proximo;
+        this.anterior = anterior;
     }
 
     public T getConteudo() {
