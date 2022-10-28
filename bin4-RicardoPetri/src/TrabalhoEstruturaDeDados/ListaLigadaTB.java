@@ -42,14 +42,14 @@ public class ListaLigadaTB <T> {
     public void mostrarNos() {
         if (tamanho != 0) {
             NoTB<T> atual = primeiro;
-            int contador = 0;
+            int c = 0;
             System.out.println("Mostrando Nos em ordem crescente");
             while (atual.getProximo() != null) {
-                System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
+                System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
                 atual = atual.getProximo();
-                contador++;
+                c++;
             }
-            System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
+            System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
         } else {
             System.out.println("Nao existe nenhum elemento na lista.");
         }
@@ -58,14 +58,14 @@ public class ListaLigadaTB <T> {
     public void mostrarNosDecrescente() {
         if (tamanho != 0) {
             NoTB<T> atual = ultimo;
-            int contador = 0;
+            int c = 0;
             System.out.println("Mostrando Nos em ordem decrescente");
             while (atual.getAnterior() != null) {
-                System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
+                System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
                 atual = atual.getAnterior();
-                contador++;
+                c++;
             }
-            System.out.println("O conteudo do No na posicao " + contador + " e igual a: " + atual.getConteudo());
+            System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
         } else {
             System.out.println("Nao existe nenhum elemento na lista.");
         }
