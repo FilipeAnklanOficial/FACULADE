@@ -1,4 +1,6 @@
 package AlgoritimoeEstruturaDeDados;
 
-public class Pilha {
+public class Pilha <T> {
+    private Pilha<T> desempilha;
+
 }
