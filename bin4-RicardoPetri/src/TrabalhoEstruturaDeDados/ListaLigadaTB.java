@@ -45,13 +45,13 @@ public class ListaLigadaTB <T> {
             int c = 0;
             System.out.println("Mostrando Nos em ordem crescente");
             while (atual.getProximo() != null) {
-                System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
+                System.out.println("Posicao " + c + " Conteudo: " + atual.getConteudo());
                 atual = atual.getProximo();
                 c++;
             }
-            System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
+            System.out.println("Posicao " + c + " Conteudo: " + atual.getConteudo());
         } else {
-            System.out.println("Nao existe nenhum elemento na lista.");
+            System.out.println("A lista esta vazia.");
         }
     }
 
@@ -61,13 +61,13 @@ public class ListaLigadaTB <T> {
             int c = 0;
             System.out.println("Mostrando Nos em ordem decrescente");
             while (atual.getAnterior() != null) {
-                System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
+                System.out.println("Posicao " + c + " Conteudo: " + atual.getConteudo());
                 atual = atual.getAnterior();
                 c++;
             }
-            System.out.println("O conteudo do No na posicao " + c + " e igual a: " + atual.getConteudo());
+            System.out.println("Posicao " + c + " Conteudo: " + atual.getConteudo());
         } else {
-            System.out.println("Nao existe nenhum elemento na lista.");
+            System.out.println("A lista esta vazia.");
         }
     }
 
