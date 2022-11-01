@@ -3,30 +3,29 @@ package ProgramacaoOrientadaAObjetos;
 import java.util.Scanner;
 
 public class Conta {
-    Scanner sc = new Scanner(System.in);
+
     private String nomeTitular;
     private int numeroConta;
     private double saldo;
-    private double saque;
+    private String tipoConta;
 
     public Conta() {
-
     }
 
-    public Conta(String nomeTitular, int numeroConta, double saldo) {
+    public Conta(String nomeTitular, int numeroConta, double saldo, String tipoConta) {
         this.nomeTitular = nomeTitular;
         this.numeroConta = numeroConta;
         this.saldo = saldo;
+        this.tipoConta = tipoConta;
     }
+
+
 
     public String getNomeTitular() {
         return nomeTitular;
     }
 
     public void setNomeTitular(String nomeTitular) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Indique o Titular");
-        nomeTitular = sc.next();
         this.nomeTitular = nomeTitular;
     }
 
@@ -49,22 +48,46 @@ public class Conta {
     public void saque(double valor) {
         if (valor > 0) {
             if (this.saldo < valor) {
-                System.out.println("Saldo insuficiente");
-            }else{
+                System.out.println("Não é possível sacar um valor maior do que o saldo.");
+            } else {
                 this.saldo = this.saldo - valor;
             }
         } else {
-            System.out.println("impossivel sacar um valor negativo");
+            System.out.println("Impossível sacar um valor negativo.");
+        }
+
+    }
+
+    public void deposito(double valor, Conta conta) {
+        if(valor > 0) {
+            conta.saldo = conta.saldo + valor;
+            System.out.println("Depósito concluído com sucesso.");
+        } else {
+            System.out.println("Não é possível depositar valores negativos ou iguais a 0.");
         }
     }
 
-    public void deposito (double valor, Conta conta) {
-        if (valor > 0) {
-            conta.saldo = conta.saldo + valor;
-            System.out.println("Deposito concluído");
-        }else {
-            System.out.println("não foi possível realizar o depósito, tente novamente");
+    public void imprimeNomeTitular(){
+        System.out.println("O nome do titular é: " + this.nomeTitular);
+    }
+
+    public void informaSaldo() {
+        System.out.println("O saldo atual da conta do(a): " + this.nomeTitular + " é igual a: " + this.saldo);
+    }
+
+    public void transfere(Conta contaDestino, double valor) {
+        if(valor > 0  && valor <= this.saldo) {
+            contaDestino.saldo += valor;
+            this.saldo -= valor;
+            System.out.println("Transferência realizada com sucesso!");
+        } else {
+            System.out.println("Não é possível transferir valores negativos ou iguais a 0.");
         }
     }
+
+    public String devolveTipoConta() {
+        return this.tipoConta;
+    }
+
 }
 
