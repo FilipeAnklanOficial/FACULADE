@@ -1,18 +1,19 @@
 package ProgramacaoOrientadaAObjetos;
 
-public class Funcionario {
+public abstract class Funcionario {
     private String nome;
     private int cpf;
-    private double salario;
+    protected double salario;
+
+    public Funcionario() {
+    }
+
+    public abstract double getBonificacao();
 
     public Funcionario(String nome, int cpf, double salario) {
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
-    }
-
-    public Funcionario() {
-
     }
 
     public String getNome() {

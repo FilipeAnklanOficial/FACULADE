@@ -1,20 +1,20 @@
 package ProgramacaoOrientadaAObjetos;
 
-public class Gerente {
+public class Gerente extends Funcionario{
     private int senha;
     private int numeroFuncionariosGerenciados;
 
-    public void especificoGerente(){
-        System.out.println("metodo específico do gerente");
+    public Gerente() {
     }
 
-    public Gerente(){
-
-    }
-
-    public Gerente (int cpf, String nome, double salario, int senha, int numeroFuncionariosGerenciados) {
+    public Gerente(int cpf, String nome, double salario, int senha, int numeroFuncionariosGerenciados) {
+        super(nome, cpf, salario);
         this.senha = senha;
         this.numeroFuncionariosGerenciados = numeroFuncionariosGerenciados;
+    }
+
+    public double getBonificacao() {
+        return this.getSalario()*0.15 + 1000.0;
     }
 
     public int getSenha() {
@@ -31,5 +31,11 @@ public class Gerente {
 
     public void setNumeroFuncionariosGerenciados(int numeroFuncionariosGerenciados) {
         this.numeroFuncionariosGerenciados = numeroFuncionariosGerenciados;
+    }
+
+
+
+    public void especificoGerente(){
+        System.out.println("Esse método é especifico de Gerente.");
     }
 }
