@@ -6,10 +6,6 @@ public class Secretaria extends Funcionario{
     public Secretaria() {
     }
 
-    public Secretaria(String nome, int cpf, double salario, String anotacoes) {
-        super(nome, cpf, salario);
-        this.anotacoes = anotacoes;
-    }
 
     public String getAnotacoes() {
         return anotacoes;

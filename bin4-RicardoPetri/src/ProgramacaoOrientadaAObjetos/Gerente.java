@@ -1,6 +1,6 @@
 package ProgramacaoOrientadaAObjetos;
 
-public class Gerente extends Funcionario{
+public class Gerente extends Funcionario implements iFuncionarioAutenticacao{
     private int senha;
     private int numeroFuncionariosGerenciados;
 
@@ -13,6 +13,7 @@ public class Gerente extends Funcionario{
         this.numeroFuncionariosGerenciados = numeroFuncionariosGerenciados;
     }
 
+    @Override
     public double getBonificacao() {
         return this.getSalario()*0.15 + 1000.0;
     }
@@ -37,5 +38,20 @@ public class Gerente extends Funcionario{
 
     public void especificoGerente(){
         System.out.println("Esse método é especifico de Gerente.");
+    }
+
+    @Override
+    public boolean autenticar() {
+        return true;
+    }
+
+    @Override
+    public boolean estaAutenticado() {
+        return false;
+    }
+
+    @Override
+    public void desautentica() {
+
     }
 }

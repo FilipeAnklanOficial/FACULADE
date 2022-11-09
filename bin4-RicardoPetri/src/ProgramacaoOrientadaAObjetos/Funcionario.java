@@ -3,7 +3,11 @@ package ProgramacaoOrientadaAObjetos;
 public abstract class Funcionario {
     private String nome;
     private int cpf;
-    protected double salario;
+    private double salario;
+
+
+
+    // métodos da classe funcionario
 
     public Funcionario() {
     }
