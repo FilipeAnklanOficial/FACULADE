@@ -26,5 +26,7 @@ public class ExecutorArvore {
         System.out.println("Quantidade e Nos na arvore: " + ab.contarNos(raiz));
         System.out.println("Menor elemento da arvore: " + ab.valorMinimo().getValor());
         System.out.println("Maior elemento da arvore: " + ab.valorMaximo().getValor());
+
+        ab.remove(21);
     }
 }

@@ -113,4 +113,52 @@ public class ArvoreBinaria {
         }
         return pai;
     }
+
+    public boolean remove (int valor){
+        if (this.raiz == null){
+            System.out.println("Arvore vazia");
+            return false;
+        }
+
+        No atual = raiz;
+        No pai = raiz;
+        boolean filhoEsquerda = true;
+
+        while (atual.getValor() != valor){
+            pai = atual;
+            if(valor < atual.getValor()){
+                atual = atual.getEsquerda();
+                filhoEsquerda = true;
+            }else {
+                atual = atual.getDireita();
+                filhoEsquerda = false;
+            }
+            if (atual == null){
+                return false;
+            }
+        }
+        if (atual.getEsquerda() == null && atual.getDireita() == null){
+            if (atual == raiz){
+                raiz = null;
+            }else if (filhoEsquerda){
+                pai.setEsquerda(null);
+            }else {
+                pai.setDireita(null);
+            }
+        }else if (atual.getDireita() == null){
+            if (atual == raiz){
+                raiz = raiz.getEsquerda();
+            }else if(filhoEsquerda){
+                pai.setEsquerda(atual.getEsquerda());
+            }else{
+                pai.setDireita(atual.getEsquerda());
+            }
+        }else if (atual.getEsquerda() == null){
+            if (atual == raiz) {
+                raiz = raiz.getDireita();
+            }else if (filhoEsquerda){
+                pai.setEsquerda(atual.getDireita());
+            }
+        }
+    }
 }
