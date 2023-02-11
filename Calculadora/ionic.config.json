@@ -1,0 +1,7 @@
+{
+  "name": "Calculadora2022",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
