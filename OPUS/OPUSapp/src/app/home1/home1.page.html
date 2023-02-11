@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="orange">
+    <ion-fab-button (click)="ShowPagePerfil()" color="light">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-fab-button>
+      <ion-back-button slot="start"></ion-back-button>
+    <ion-text color="light"><b>Perfil</b></ion-text>
+  </ion-toolbar>
+</ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-toolbar>
+        <h4><b><u>Categorias</u></b></h4>
+      </ion-toolbar>
+      <ion-col>
+        <ion-item>Construção
+          <ion-icon name="construct-outline" slot="start"></ion-icon>
+          <ion-button (click)="ShowPageConstrucao()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item>Saúde
+          <ion-icon name="fitness-outline" slot="start"s></ion-icon>
+          <ion-button (click)="ShowPageSaude()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item>Estética
+          <ion-icon name="cut-outline" slot="start"></ion-icon>
+          <ion-button (click)="ShowPageEstetica()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item>Entretenimento
+          <ion-icon name="videocam-outline" slot="start"></ion-icon>
+          <ion-button (click)="ShowPageEntretenimento()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item>Fretes
+          <ion-icon name="car-outline" slot="start"></ion-icon>
+          <ion-button (click)="ShowPageFretes()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item>Assessoria
+          <ion-icon name="people-outline" slot="start"></ion-icon>
+          <ion-button (click)="ShowPageAssessoria()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item>Ensino
+          <ion-icon name="school-outline" slot="start"></ion-icon>
+          <ion-button (click)="ShowPageEnsino()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item>Animal
+          <ion-icon name="paw-outline" slot="start"></ion-icon>
+          <ion-button (click)="ShowPageAnimal()" slot="end" color="light">
+            <ion-icon color="orange" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-list>
+  </ion-content>

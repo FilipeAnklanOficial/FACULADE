@@ -1,0 +1,47 @@
+ion-toolbar{
+  ion-text {
+    left: 50%;
+    position:absolute;
+    top: 20px;
+  }
+ ion-fab-button {
+   height: 50px;
+   width: 50px;
+   left: 30%;
+   right: 50%;
+   top: 5%;
+   position:absolute;
+  ion-icon {
+   height: 50px;
+   width: 50px;
+  }
+ }
+}
+
+ion-list{
+ion-toolbar{
+  height: 40px;
+}
+  h4 {
+    color: #e78123;
+    position: absolute;
+    left: 34%;
+    top: 0%;
+  }
+  ion-col{
+    ion-item{
+      width: 265px;
+      ion-icon{
+        height:20px;
+        width: 20px;
+      }
+      ion-button{
+        left: 10%;
+        ion-icon{
+          height: 25px;
+          width: 25px;
+        }
+      }
+    }
+  }
+}

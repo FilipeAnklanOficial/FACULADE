@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding class="background">
+  <div id="container">
+    <br>
+    <br>
+    <h3 color="orange">Cadastre seus dados!</h3>
+    <ion-item>
+      <ion-textarea placeholder="E-mail" color="orange" ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="CPF" color="orange" ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Data de nascimento" color="orange" ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Telefone" color="orange" ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Senha" color="orange" ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Repetir senha" color="orange" ></ion-textarea>
+    </ion-item>
+    <ion-button
+    (click)="ShowPagePaglogin()"
+    color="orange"
+    expand="block"
+    >Cadastrar</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "OPUSapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

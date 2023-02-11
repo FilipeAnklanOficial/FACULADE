@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding class="background">
+  <div id="container">
+    <ion-item>
+      <ion-textarea color="orange" placeholder="Email, CPF ou Telefone">
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea maxlength="16" color="orange" placeholder="Senha">
+      </ion-textarea>
+    </ion-item>
+    <ion-button
+    (click)='ShowPagehome1()'
+    color="orange"
+    size="large">Entrar</ion-button>
+  </div>
+</ion-content>
